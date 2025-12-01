@@ -68,6 +68,7 @@
             buttonSpravka.TabIndex = 1;
             buttonSpravka.Text = "Справка";
             buttonSpravka.UseVisualStyleBackColor = false;
+            buttonSpravka.Click += buttonSpravka_Click;
             // 
             // groupBoxCondition
             // 
@@ -170,13 +171,16 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(932, 450);
             Controls.Add(groupBoxVvod);
             Controls.Add(groupBoxVivod);
             Controls.Add(groupBoxCondition);
             Controls.Add(buttonSpravka);
             Controls.Add(buttonDone);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Спринт 6 | Таск 1 | Вариант 26 | Левакова А.А.";
             groupBoxCondition.ResumeLayout(false);
             groupBoxCondition.PerformLayout();

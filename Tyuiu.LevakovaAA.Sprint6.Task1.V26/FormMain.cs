@@ -21,7 +21,7 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task1.V26
                 int len = ds.GetMassFunction(startStep, stopStep).Length;
                 double[] valueArray;
                 valueArray = new double[len];
-                valueArray = ds.GetMassFunction(startStep,stopStep);
+                valueArray = ds.GetMassFunction(startStep, stopStep);
                 textBoxResult.Text = "";
                 textBoxResult.AppendText("+-------+-------+" + Environment.NewLine);
                 textBoxResult.AppendText("|    X      |   F(x)    |" + Environment.NewLine);
@@ -38,6 +38,11 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task1.V26
             {
                 MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void buttonSpravka_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Таск 0 выполнила студентка группы СМАРТб-25-1 Левакова Анастасия Александровна", "Сообщение");
         }
     }
 }
