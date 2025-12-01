@@ -9,7 +9,7 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task0.V20.Lib
     {
         public double Calculate(int x)
         {
-            double res = (3*Math.Pow(x, 4) + 1)/Math.Pow(x, 3);
+            double res = (3*Math.Pow(x, 5) + 1)/Math.Pow(x, 3);
             return Math.Round(res, 3);
         }
     }
