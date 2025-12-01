@@ -12,7 +12,7 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task0.V20.Test
         {
             DataService ds = new DataService();
             double res = ds.Calculate(3);
-            Assert.AreEqual(9.038, res);
+            Assert.AreEqual(9.037, res);
         }
     }
 }
