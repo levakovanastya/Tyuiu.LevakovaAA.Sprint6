@@ -27,18 +27,15 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task2.V24
                 double[] valueArray;
                 valueArray = new double[len];
                 valueArray = ds.GetMassFunction(startStep, stopStep);
-                textBoxResult.Text = "";
-                textBoxResult.AppendText("+-------+-------+" + Environment.NewLine);
-                textBoxResult.AppendText("|    X      |   F(x)    |" + Environment.NewLine);
-                textBoxResult.AppendText("+-------+-------+" + Environment.NewLine);
+                this.ChartFunction.Titles.Add("График функции F(x)");
+                this.ChartFunction.ChartAreas[0].AxisX.Title = "ОСь x";
+                this.ChartFunction.ChartAreas[0].AxisY.Title = "ОСь y";
                 for (int i = 0; i <= len - 1; i++)
                 {
-                    string strline = string.Format("| {0,5:d}    |   {1,5:f2}   |", startStep, valueArray[i]);
-                    textBoxResult.AppendText(strline + Environment.NewLine);
+                    this.dataGridViewFunction.Rows.Add(Convert.ToString(startStep), Convert.ToString(valueArray[i]));
+                    this.ChartFunction.Series[0].Points.AddXY(startStep, valueArray[i]);
                     startStep++;
                 }
-                textBoxResult.AppendText("+-------+-------+" + Environment.NewLine);
-
             }
             catch
             {
@@ -59,6 +56,11 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task2.V24
         private void buttonDone_MouseEnter(object sender, EventArgs e)
         {
             buttonDone.BackColor = Color.Red;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

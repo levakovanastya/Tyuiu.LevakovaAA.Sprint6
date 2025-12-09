@@ -32,11 +32,17 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task2.V24
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             groupBoxCondition = new GroupBox();
             textBoxTask = new TextBox();
             groupBoxVivod = new GroupBox();
             groupBoxRes = new GroupBox();
-            textBoxResult = new TextBox();
+            dataGridViewFunction = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            ChartFunction = new System.Windows.Forms.DataVisualization.Charting.Chart();
             groupBoxVvod = new GroupBox();
             groupBoxStop = new GroupBox();
             textBoxStopValue = new TextBox();
@@ -47,6 +53,8 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task2.V24
             groupBoxCondition.SuspendLayout();
             groupBoxVivod.SuspendLayout();
             groupBoxRes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFunction).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ChartFunction).BeginInit();
             groupBoxVvod.SuspendLayout();
             groupBoxStop.SuspendLayout();
             SuspendLayout();
@@ -56,7 +64,7 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task2.V24
             groupBoxCondition.Controls.Add(textBoxTask);
             groupBoxCondition.Location = new Point(27, 24);
             groupBoxCondition.Name = "groupBoxCondition";
-            groupBoxCondition.Size = new Size(572, 294);
+            groupBoxCondition.Size = new Size(480, 294);
             groupBoxCondition.TabIndex = 2;
             groupBoxCondition.TabStop = false;
             groupBoxCondition.Text = "Условие";
@@ -66,38 +74,76 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task2.V24
             textBoxTask.Location = new Point(0, 31);
             textBoxTask.Multiline = true;
             textBoxTask.Name = "textBoxTask";
-            textBoxTask.Size = new Size(574, 264);
+            textBoxTask.Size = new Size(481, 264);
             textBoxTask.TabIndex = 0;
             textBoxTask.Text = "Протабулировать функцию F(x) на заданном диапазоне. Результат вывести в виде таблицы";
             // 
             // groupBoxVivod
             // 
             groupBoxVivod.Controls.Add(groupBoxRes);
-            groupBoxVivod.Location = new Point(630, 32);
+            groupBoxVivod.Location = new Point(548, 32);
             groupBoxVivod.Name = "groupBoxVivod";
-            groupBoxVivod.Size = new Size(536, 393);
+            groupBoxVivod.Size = new Size(618, 393);
             groupBoxVivod.TabIndex = 3;
             groupBoxVivod.TabStop = false;
             groupBoxVivod.Text = "Вывод данных";
             // 
             // groupBoxRes
             // 
-            groupBoxRes.Controls.Add(textBoxResult);
+            groupBoxRes.Controls.Add(dataGridViewFunction);
+            groupBoxRes.Controls.Add(ChartFunction);
             groupBoxRes.Location = new Point(0, 27);
             groupBoxRes.Name = "groupBoxRes";
-            groupBoxRes.Size = new Size(536, 366);
+            groupBoxRes.Size = new Size(618, 366);
             groupBoxRes.TabIndex = 0;
             groupBoxRes.TabStop = false;
             groupBoxRes.Text = "Результат";
             // 
-            // textBoxResult
+            // dataGridViewFunction
             // 
-            textBoxResult.Location = new Point(3, 30);
-            textBoxResult.Multiline = true;
-            textBoxResult.Name = "textBoxResult";
-            textBoxResult.ReadOnly = true;
-            textBoxResult.Size = new Size(530, 340);
-            textBoxResult.TabIndex = 0;
+            dataGridViewFunction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewFunction.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
+            dataGridViewFunction.Location = new Point(18, 29);
+            dataGridViewFunction.Name = "dataGridViewFunction";
+            dataGridViewFunction.RowHeadersVisible = false;
+            dataGridViewFunction.RowHeadersWidth = 51;
+            dataGridViewFunction.Size = new Size(194, 324);
+            dataGridViewFunction.TabIndex = 2;
+            dataGridViewFunction.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "X";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 60;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "F(X)";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 60;
+            // 
+            // ChartFunction
+            // 
+            chartArea1.Name = "ChartArea1";
+            ChartFunction.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            ChartFunction.Legends.Add(legend1);
+            ChartFunction.Location = new Point(224, 30);
+            ChartFunction.Name = "ChartFunction";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            ChartFunction.Series.Add(series1);
+            ChartFunction.Size = new Size(394, 323);
+            ChartFunction.TabIndex = 1;
+            ChartFunction.Text = "chart1";
             // 
             // groupBoxVvod
             // 
@@ -153,7 +199,7 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task2.V24
             buttonSpravka.BackColor = Color.LightPink;
             buttonSpravka.Location = new Point(340, 359);
             buttonSpravka.Name = "buttonSpravka";
-            buttonSpravka.Size = new Size(113, 65);
+            buttonSpravka.Size = new Size(90, 65);
             buttonSpravka.TabIndex = 5;
             buttonSpravka.Text = "Справка";
             buttonSpravka.UseVisualStyleBackColor = false;
@@ -162,9 +208,9 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task2.V24
             // buttonDone
             // 
             buttonDone.BackColor = Color.HotPink;
-            buttonDone.Location = new Point(459, 352);
+            buttonDone.Location = new Point(436, 352);
             buttonDone.Name = "buttonDone";
-            buttonDone.Size = new Size(142, 70);
+            buttonDone.Size = new Size(106, 70);
             buttonDone.TabIndex = 6;
             buttonDone.Text = "Выполнить";
             buttonDone.UseVisualStyleBackColor = false;
@@ -178,7 +224,7 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task2.V24
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(1178, 450);
+            ClientSize = new Size(1198, 450);
             Controls.Add(buttonDone);
             Controls.Add(buttonSpravka);
             Controls.Add(groupBoxVvod);
@@ -192,7 +238,8 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task2.V24
             groupBoxCondition.PerformLayout();
             groupBoxVivod.ResumeLayout(false);
             groupBoxRes.ResumeLayout(false);
-            groupBoxRes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFunction).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ChartFunction).EndInit();
             groupBoxVvod.ResumeLayout(false);
             groupBoxVvod.PerformLayout();
             groupBoxStop.ResumeLayout(false);
@@ -213,6 +260,9 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task2.V24
         private GroupBox groupBoxStart;
         private Button buttonSpravka;
         private Button buttonDone;
-        private TextBox textBoxResult;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartFunction;
+        private DataGridView dataGridViewFunction;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
     }
 }
