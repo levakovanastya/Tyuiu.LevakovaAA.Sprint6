@@ -8,7 +8,7 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task3.V13.Lib
 {
     public class DataService : ISprint6Task3V13
     {
-public int[,] Calculate(int[,] matrix)
+        public int[,] Calculate(int[,] matrix)
         {
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
@@ -19,6 +19,7 @@ public int[,] Calculate(int[,] matrix)
 
             return resultMatrix;
         }
+         
 
         private void SortByColumn(int[,] matrix, int columnIndex)
         {

@@ -32,11 +32,14 @@
             textBox1 = new TextBox();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
+            dataGridViewMatrix = new DataGridView();
+            buttonDone = new Button();
             buttonSpravka = new Button();
-            buttonResult = new Button();
+            textBox2 = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMatrix).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -62,7 +65,7 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(groupBox3);
-            groupBox2.Location = new Point(611, 22);
+            groupBox2.Location = new Point(295, 22);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(341, 416);
             groupBox2.TabIndex = 1;
@@ -71,7 +74,9 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(buttonResult);
+            groupBox3.Controls.Add(textBox2);
+            groupBox3.Controls.Add(dataGridViewMatrix);
+            groupBox3.Controls.Add(buttonDone);
             groupBox3.Controls.Add(buttonSpravka);
             groupBox3.Location = new Point(0, 33);
             groupBox3.Name = "groupBox3";
@@ -79,6 +84,26 @@
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Результат";
+            // 
+            // dataGridViewMatrix
+            // 
+            dataGridViewMatrix.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewMatrix.Location = new Point(10, 35);
+            dataGridViewMatrix.Name = "dataGridViewMatrix";
+            dataGridViewMatrix.RowHeadersVisible = false;
+            dataGridViewMatrix.RowHeadersWidth = 51;
+            dataGridViewMatrix.Size = new Size(315, 267);
+            dataGridViewMatrix.TabIndex = 2;
+            // 
+            // buttonDone
+            // 
+            buttonDone.Location = new Point(226, 331);
+            buttonDone.Name = "buttonDone";
+            buttonDone.Size = new Size(111, 44);
+            buttonDone.TabIndex = 1;
+            buttonDone.Text = "Выполнить";
+            buttonDone.UseVisualStyleBackColor = true;
+            buttonDone.Click += buttonDone_Click;
             // 
             // buttonSpravka
             // 
@@ -89,28 +114,29 @@
             buttonSpravka.Text = "?";
             buttonSpravka.UseVisualStyleBackColor = true;
             // 
-            // buttonResult
+            // textBox2
             // 
-            buttonResult.Location = new Point(226, 331);
-            buttonResult.Name = "buttonResult";
-            buttonResult.Size = new Size(111, 44);
-            buttonResult.TabIndex = 1;
-            buttonResult.Text = "Выполнить";
-            buttonResult.UseVisualStyleBackColor = true;
+            textBox2.Location = new Point(20, 327);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(134, 27);
+            textBox2.TabIndex = 3;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(969, 450);
+            ClientSize = new Size(669, 450);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "FormMain";
             Text = "Спринт 6 | Таск 3 | Вариант 13 | Левакова А.А.";
+            Load += FormMain_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMatrix).EndInit();
             ResumeLayout(false);
         }
 
@@ -120,7 +146,9 @@
         private TextBox textBox1;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
-        private Button buttonResult;
+        private Button buttonDone;
         private Button buttonSpravka;
+        private DataGridView dataGridViewMatrix;
+        private TextBox textBox2;
     }
 }
