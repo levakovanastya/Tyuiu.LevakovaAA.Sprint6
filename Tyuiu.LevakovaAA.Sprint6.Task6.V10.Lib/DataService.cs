@@ -18,11 +18,19 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task6.V10.Lib
                 {
                     if (line.Contains("w"))
                     {
-                        resStr = resStr + " " + line;
-                    }
+                        string[] words = line.Split(' ');
+
+                        foreach (string w in words)
+                        {
+                            if (w.Contains("w"))
+                            {
+                                resStr = resStr + " " + w;
+                            }
+                        }
+                    }                  
                 }
             }
-            return resStr;
+            return resStr.TrimStart();
         }
     }
 }
