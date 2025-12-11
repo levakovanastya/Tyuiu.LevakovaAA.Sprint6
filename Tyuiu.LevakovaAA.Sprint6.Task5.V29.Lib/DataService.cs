@@ -27,8 +27,7 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task5.V29.Lib
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    string correctedline = line.Replace(',', '.');
-                    numsArray[index] = Convert.ToDouble(correctedline);
+                    numsArray[index] = Convert.ToDouble(line);
                     index++;
                 }
             }
