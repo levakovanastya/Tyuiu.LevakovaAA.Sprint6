@@ -24,7 +24,6 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task7.V19.Lib
                         matrix[1, j] = 2;
                     }
                 }
-            }
             return matrix;
         }
     }
