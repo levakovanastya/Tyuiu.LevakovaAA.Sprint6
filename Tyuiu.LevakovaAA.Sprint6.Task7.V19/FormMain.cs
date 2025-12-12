@@ -148,5 +148,10 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task7.V19
             FormAbout formAbout = new FormAbout();
             formAbout.ShowDialog();
         }
+
+        private void dataGridViewInMatrix_LAA_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -133,6 +133,7 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task5.V29
             ChartDiag.Size = new Size(697, 368);
             ChartDiag.TabIndex = 5;
             ChartDiag.Text = "chart1";
+            ChartDiag.Click += ChartDiag_Click;
             // 
             // FormMain
             // 

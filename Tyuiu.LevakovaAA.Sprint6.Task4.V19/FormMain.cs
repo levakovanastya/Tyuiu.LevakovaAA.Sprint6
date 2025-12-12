@@ -74,5 +74,10 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task4.V19
         {
             MessageBox.Show("Таск 4 выполнила студентка группы СМАРТб-25-1 Левакова Анастасия Александровна", "Сообщение");
         }
+
+        private void ChartFunction_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

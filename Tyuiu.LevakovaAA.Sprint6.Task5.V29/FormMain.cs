@@ -57,5 +57,10 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task5.V29
             txt.StartInfo.Arguments = path;
             txt.Start();
         }
+
+        private void ChartDiag_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
