@@ -130,12 +130,12 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task7.V19
 
         private void buttonOpenFile_LAA_MouseEnter(object sender, EventArgs e)
         {
-            toolTipButton.ToolTipTitle = "Выполнить";
+            toolTipButton.ToolTipTitle = "Открыть файл";
         }
 
         private void buttonDone_LAA_MouseEnter(object sender, EventArgs e)
         {
-            toolTipButton.ToolTipTitle = "Сохранить в файл";
+            toolTipButton.ToolTipTitle = "Выполнить";
         }
 
         private void buttonHelp_LAA_MouseEnter(object sender, EventArgs e)
@@ -152,6 +152,11 @@ namespace Tyuiu.LevakovaAA.Sprint6.Task7.V19
         private void dataGridViewInMatrix_LAA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void buttonSaveFile_LAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipButton.ToolTipTitle = "Сохранить в файл";
         }
     }
 }
